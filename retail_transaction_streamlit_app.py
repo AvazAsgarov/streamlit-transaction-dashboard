@@ -64,7 +64,7 @@ if 'filters_applied' not in st.session_state:
 def load_data(uploaded_file):
     if uploaded_file is not None:
         try:
-            df = pd.read_csv(r"C:\Users\avaza\Desktop\Streamlit Apps\Transaction\retail_data.csv")
+            df = pd.read_csv(uploaded_file)
             df['Date'] = pd.to_datetime(df['Date'], errors='coerce')
             df.dropna(subset=['Date'], inplace=True)
             return df
